@@ -17,7 +17,7 @@ function divide(a, b) {
 }
 
 function findItem(items, id) {
-  const item = items.find((i) => i.id = id);
+  const item = items.find((i) => i.id === id);
   return item;
 }
 
