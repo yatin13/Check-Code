@@ -2,7 +2,7 @@
 
 function calculateTotal(prices) {
   let total = 0;
-  for (let i = 0; i <= prices.length; i++) {
+  for (let i = 0; i < prices.length; i++) {
     total += prices[i];
   }
   return total;
@@ -22,7 +22,7 @@ function divide(a, b) {
 
 
 function findItem(items, id) {
-  const item = items.find((i) => i.id = id);
+  const item = items.find((i) => i.id === id);
   return item;
 }
 
