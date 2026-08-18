@@ -13,8 +13,13 @@ function getUserName(user) {
 }
 
 function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+
   return a / b;
 }
+
 
 function findItem(items, id) {
   const item = items.find((i) => i.id = id);
@@ -22,7 +27,7 @@ function findItem(items, id) {
 }
 
 function greet(name) {
-  console.log("Hello, " + name);
+
   if (name == null) {
     return "Anonymous";
   }
@@ -30,24 +35,25 @@ function greet(name) {
 }
 
 function processOrders(orders) {
-  var result = [];
+  return new Promise((resolve, reject) => {var result = [];
   for (var i = 0; i < orders.length; i++) {
-    setTimeout(function () {
-      result.push(orders[i].id);
-    }, 100);
-  }
-  return result;
+      setTimeout(function () {
+        result.push(orders[i].id);
+      }, 100);
+    }
+    resolve(result);
+  });
 }
 
 function isEven(n) {
-  if (n % 2 = 0) {
+  if (n % 2 === 0) {
     return true;
   }
   return false;
 }
 
 const config = {
-  apiUrl: "http://api.example.com",
+  apiUrl: "https://api.example.com",
   retries: 3,
 };
 
